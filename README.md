@@ -44,8 +44,14 @@ checkout) and require jolt.cedar.
 
 ## Status
 
-Scaffold — C ABI shim + stub ns landed; the .so build and jolt.ffi binding are
-next (board nc-41BD), then the smoke test (nc-7675).
+Working. The .so builds (cargo build --release in native/), jolt.ffi binds the
+three extern-C entry points, and jolt.cedar exposes new-authorizer / authorized?
+/ validate / close!. The smoke test covers authorize (permit, default-deny,
+entity membership), validation, and the close! contract:
+
+    jolt run test/jolt/cedar_test.clj
+
+Board: nc-4867 (scaffold), nc-41BD (binding), nc-7675 (smoke test) all done.
 
 ## License
 
