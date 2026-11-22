@@ -1,0 +1,17 @@
+[package]
+name = "jolt-cedar-ffi"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "cedar_policy"
+crate-type = ["cdylib"]
+
+[dependencies]
+cedar-policy = "4.15.0"
+serde_json = "1"
+libc = "0.2"
+
+[profile.release]
+lto = true
+strip = true
