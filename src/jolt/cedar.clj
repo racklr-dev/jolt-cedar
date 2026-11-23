@@ -26,10 +26,13 @@
   (when (and p (fs/exists? p)) (str p)))
 
 (defn- resolve-lib-path
-  "Find libcedar_policy.so: JOLT_CEDAR_LIB, then relative to the source
-  checkout, then the working directory."
+  "Find libcedar_policy.so: JOLT_CEDAR_LIB, then a system install
+  (/usr/local/lib, /usr/lib), then relative to the source checkout, then
+  the working directory."
   []
   (or (existing (System/getenv "JOLT_CEDAR_LIB"))
+      (some existing ["/usr/local/lib/libcedar_policy.so"
+                      "/usr/lib/libcedar_policy.so"])
       (existing (when-let [r (project-root)] (str (fs/path r lib-path-rel))))
       (existing lib-path-rel)
       (existing "libcedar_policy.so")))
