@@ -1,6 +1,6 @@
-;; jolt-cedar: Cedar policy engine for the jolt control plane.
+;; jolt-cedar: Cedar policy engine for a jolt-based control plane.
 (ns jolt.cedar
-  "Cedar policy engine for the jolt control plane.
+  "Cedar policy engine for a jolt-based control plane.
 
   Turns a Policy Set (jolt-contracts SPEC.md section 6) into authorization
   decisions over the cedar-policy crate, reached through a thin C ABI via
