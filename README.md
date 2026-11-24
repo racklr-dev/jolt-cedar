@@ -1,7 +1,7 @@
 # jolt-cedar — Cedar policy engine for the jolt control plane
 
 Authorization decisions over the [Cedar](https://github.com/cedar-policy/cedar)
-policy language, for the jolt control plane. A Policy Set
+policy language, for a jolt control plane. A Policy Set
 ([faraday-contracts](https://github.com/racklr-dev/faraday/blob/main/contracts/SPEC.md)
 §6) — policies plus optional schema, entities, and context — maps onto the
 cedar-policy crate's JSON entry points (`is_authorized_json_str`,
